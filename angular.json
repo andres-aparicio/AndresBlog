@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "FedericaDJ"
+    }
+  },
+  "defaultProject": "FedericaDJ",
+  "cli": {
+    "analytics": "354d15f5-781c-4fed-becb-c00413ca5b1b"
+  }
 }
