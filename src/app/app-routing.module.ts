@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { NoticiasModule } from './components/noticias/noticias.module';
 import { NoticiaCompletaModule } from './components/noticia-completa/noticia-completa.module';
 import { AjustesModule } from './components/ajustes/ajustes.module';
+import { NoticiaCompletaGuard } from './guards/noticia-completa.guard';
 
 const routes: Routes = [
   {path: 'inicio', loadChildren: () => 
@@ -12,7 +13,8 @@ const routes: Routes = [
   import('./components/noticias/noticias.module').then(m => m.NoticiasModule)
   },
   {path: 'noticiaCompleta', loadChildren: () => 
-  import('./components/noticia-completa/noticia-completa.module').then(m => m.NoticiaCompletaModule)
+  import('./components/noticia-completa/noticia-completa.module').then(m => m.NoticiaCompletaModule),
+  canActivate: [NoticiaCompletaGuard]
   },
   {path: 'ajustes', loadChildren: () => 
   import('./components/ajustes/ajustes.module').then(m => m.AjustesModule)
