@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { NoticiaService } from '../../services/noticia.service';
+import { ImagenesYoService } from '../../services/imagenes-yo.service';
+import { Noticia, RespuestaNoticia } from '../../interfaces/noticias';
 
-declare let $:any;
+declare let $: any;
 
 @Component({
   selector: 'app-inicio',
@@ -12,10 +14,13 @@ declare let $:any;
 })
 export class InicioComponent implements OnInit {
 
-  mostrarYo= true;
+  mostrarYo = true;
+  noticias: Noticia[] = [];
 
-  constructor(private router: Router,
-    public noticiaservice: NoticiaService) { }
+  constructor(
+    private router: Router,
+    public noticiaservice: NoticiaService,
+    public imagenesYo: ImagenesYoService) { }
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
@@ -23,21 +28,29 @@ export class InicioComponent implements OnInit {
       $('[data-toggle="tooltip"]').tooltip();
     });
     this.noticiaservice.noticiaCompleta = false;
+
+    //Obtener 3 ultimas noticias
+
+    this.noticiaservice.getUltimasNoticias()
+      .subscribe((res: RespuestaNoticia) => {
+        this.noticias.push(...res.noticias.slice(0, 3));
+        console.log(this.noticias);
+      });
   }
 
-  yoMostrar(){
+  yoMostrar() {
     this.mostrarYo = !this.mostrarYo;
   }
-  
-  tecnologias(){
+
+  tecnologias() {
     $('#modalTecnologias').modal();
   }
 
-  sobreMi(){
+  sobreMi() {
     $('#sobreMi').modal();
   }
 
-  mostrarNoticia(){
+  mostrarNoticia() {
     $(() => {
       $('[data-toggle="tooltip"]').tooltip('hide');
     });
