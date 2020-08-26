@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { environment } from '../../environments/environment.prod';
+import { environment } from '../../environments/environment';
 
 const URL = environment.url;
 
@@ -15,7 +15,21 @@ export class NoticiaService {
 
   constructor(private http: HttpClient) { }
 
-  getUltimasNoticias(){
+  getUltimasNoticias() {
+    return this.http.get(`${URL}/noticias?pagina=${this.pagina}`);
+  }
+
+  getNoticiasPaginadasMas() {
+    this.pagina++;
+    return this.http.get(`${URL}/noticias?pagina=${this.pagina}`);
+  }
+
+  getNoticiasPaginadasMenos() {
+    if (this.pagina <= 1) {
+      this.pagina = 1;
+    } else {
+      this.pagina--;
+    }
     return this.http.get(`${URL}/noticias?pagina=${this.pagina}`);
   }
 }

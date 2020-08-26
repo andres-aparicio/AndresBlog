@@ -69,10 +69,10 @@
     </h3>
     <div class="container text-center mt-3 cursor7">
       <ul class="list-unstyled backUltimas28 pt-4 pl-4 pr-4 mt-1 text-justify">
-        <li *ngFor="let noticia of noticias" (click)="mostrarNoticia()" class="backNoti32 mb-4" data-toggle="tooltip" data-placement="top" title="ABRIR">
+        <li *ngFor="let noticia of noticias" (click)="mostrarNoticia(noticia)" class="backNoti32 mb-4" data-trigger="hover" data-toggle="tooltip" data-placement="top" title="ABRIR">
           <div class="media-body">
             <h6 class="mb-1">
-              <img src="../../../assets/img/1.jpg" class="tamanoYo29 rounded-circle mr-4 backImgNoti30">
+              <img [src]="noticia.imgYo | imagenYo" class="tamanoYo29 rounded-circle mr-4 backImgNoti30">
               <span class="font-weight-normal backTituloNoti33">{{noticia.titulo}}</span>
             </h6>
             <span class="colorNoti31">

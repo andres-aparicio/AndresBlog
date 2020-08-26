@@ -24,9 +24,14 @@ export class InicioComponent implements OnInit {
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
-    $(() => {
-      $('[data-toggle="tooltip"]').tooltip();
-    });
+    setTimeout(() => {
+      $(() => {
+      $('[data-toggle="tooltip"]').tooltip({
+        trigger: 'hover'
+      });
+      });
+    }, 150);
+
     this.noticiaservice.noticiaCompleta = false;
 
     //Obtener 3 ultimas noticias
@@ -34,7 +39,6 @@ export class InicioComponent implements OnInit {
     this.noticiaservice.getUltimasNoticias()
       .subscribe((res: RespuestaNoticia) => {
         this.noticias.push(...res.noticias.slice(0, 3));
-        console.log(this.noticias);
       });
   }
 
@@ -50,14 +54,15 @@ export class InicioComponent implements OnInit {
     $('#sobreMi').modal();
   }
 
-  mostrarNoticia() {
+  mostrarNoticia(noticia: Noticia) {
     $(() => {
       $('[data-toggle="tooltip"]').tooltip('hide');
     });
     this.noticiaservice.noticiaCompleta = true;
+    this.noticiaservice.noticiaSel = noticia;
     setTimeout(() => {
       this.router.navigateByUrl('noticiaCompleta');
-    }, 150);
+    }, 600);
   }
 
 }
