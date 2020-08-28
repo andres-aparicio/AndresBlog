@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { environment } from '../../environments/environment';
+import { Router } from '@angular/router';
 
 const URL = environment.url;
 
@@ -11,7 +12,8 @@ export class MensajesService {
   suma: number;
 
   constructor(
-    private http: HttpClient
+    private http: HttpClient,
+    private router: Router
   ) { }
 
   getMensajes() {
@@ -26,5 +28,13 @@ export class MensajesService {
     this.getMensajes().subscribe((res: any) => {
       this.suma = res.contacto.length;
     })
+  }
+
+  crearMensaje(email: string, mensaje: string){
+    const data = {email, mensaje};
+    return this.http.post(`${URL}/contacto`, data).subscribe(() => {
+      this.router.navigateByUrl('/inicio', {skipLocationChange: true})
+      .then(() => this.router.navigate(['mensajes']));
+    });
   }
 }

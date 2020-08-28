@@ -4,6 +4,7 @@ import { NoticiasModule } from './components/noticias/noticias.module';
 import { NoticiaCompletaModule } from './components/noticia-completa/noticia-completa.module';
 import { AjustesModule } from './components/ajustes/ajustes.module';
 import { NoticiaCompletaGuard } from './guards/noticia-completa.guard';
+import { LoginGuard } from './guards/login.guard';
 
 const routes: Routes = [
   {path: 'inicio', loadChildren: () => 
@@ -18,11 +19,14 @@ const routes: Routes = [
   },
   {path: 'ajustes', loadChildren: () => 
   import('./components/ajustes/ajustes.module').then(m => m.AjustesModule)
+  // canActivate: [LoginGuard]
   },
   {path: 'mensajes', loadChildren: () => 
   import('./components/mensajes/mensajes.module').then(m => m.MensajesModule)
+  // canActivate: [LoginGuard]
   },
-  { path: '', pathMatch: 'full', redirectTo: 'inicio' }
+  { path: '', pathMatch: 'full', redirectTo: 'inicio' },
+  { path: '**', pathMatch: 'full', redirectTo: 'inicio' }
 ];
 
 @NgModule({

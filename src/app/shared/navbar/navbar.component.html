@@ -27,7 +27,8 @@
                     <!-- <li class="nav-item mr-1 ml-1" routerLinkActive="active">
                         <a (click)="cerrarNavbar()" class="nav-link colorName3" [routerLink]="['/noticiaCompleta']">Noticia Completa</a>
                     </li> -->
-                    <li class="nav-item mr-1 ml-1" routerLinkActive="active">
+                    <!-- *ngIf="usuarioservice.autentificado" -->
+                    <li  class="nav-item mr-1 ml-1" routerLinkActive="active">
                         <a (click)="cerrarNavbar()" class="nav-link colorName3" [routerLink]="['/mensajes']">Mensajes
                             <span class="ml-2">{{mensajes.suma}}</span>
                         </a>
