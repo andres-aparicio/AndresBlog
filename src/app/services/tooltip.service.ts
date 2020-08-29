@@ -24,8 +24,6 @@ export class TooltipService {
   }
 
   cerrarTooltip(){
-    $(() => {
       $('[data-toggle="tooltip"]').tooltip('hide');
-    });
   }
 }

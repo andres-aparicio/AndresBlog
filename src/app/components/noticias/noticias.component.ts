@@ -20,6 +20,7 @@ export class NoticiasComponent implements OnInit {
   ngOnInit(): void {
     window.scrollTo(0, 0);
     this.noticiaservice.noticiaCompleta = false;
+    this.noticiaservice.pagina = 1;
     //Obtener noticias
     this.noticiaservice.getUltimasNoticias()
       .subscribe((res: RespuestaNoticia) => {

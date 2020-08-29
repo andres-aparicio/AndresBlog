@@ -3,6 +3,7 @@ import { ModalService } from '../../services/modal.service';
 import Swal from 'sweetalert2';
 import { MensajesService } from '../../services/mensajes.service';
 import { UsuarioService } from '../../services/usuario.service';
+import { TooltipService } from '../../services/tooltip.service';
 declare let $: any;
 @Component({
   selector: 'app-navbar',
@@ -18,7 +19,8 @@ export class NavbarComponent implements OnInit {
 
   constructor(public modalservice: ModalService,
     public mensajes: MensajesService,
-    public usuarioservice: UsuarioService) {
+    public usuarioservice: UsuarioService,
+    public tooltip: TooltipService) {
     this.modalservice.ojo2 = true;
   }
   
@@ -41,18 +43,14 @@ export class NavbarComponent implements OnInit {
   onclick1() {
     this.ojo = false;
     this.login1 = false;
-    $(() => {
-      $('[data-toggle="tooltip"]').tooltip();
-    });
+    this.tooltip.abrirTooltip();
   }
 
   onclick2() {
     this.ojo = true;
     this.login1 = true;
     this.modalservice.ojo2 = false;
-    $(() => {
-      $('[data-toggle="tooltip"]').tooltip();
-    });
+    this.tooltip.abrirTooltip();
   }
 
   entrar() {
@@ -61,7 +59,7 @@ export class NavbarComponent implements OnInit {
     $(document).ready(() => {
       $('#focusClave').trigger('focus');
     });
-    $('[data-toggle="tooltip"]').tooltip('hide');
+    this.tooltip.cerrarTooltip();
   }
 
   inputLogin() {
