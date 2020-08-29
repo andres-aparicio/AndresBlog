@@ -4,6 +4,7 @@ import { Foto } from '../../interfaces/foto';
 import { TecnologiaSobreMiService } from '../../services/tecnologia-sobre-mi.service';
 import { NgForm } from '@angular/forms';
 import Swal from 'sweetalert2';
+import { TooltipService } from '../../services/tooltip.service';
 
 
 declare let $: any;
@@ -21,18 +22,13 @@ export class AjustesComponent implements OnInit {
   sobreMiBackend: any;
 
   constructor(public imagenesYoService: ImagenesYoService,
-    public tecnologiaSobreMi: TecnologiaSobreMiService) { }
+    public tecnologiaSobreMi: TecnologiaSobreMiService,
+    public tooltip: TooltipService) { }
 
   ngOnInit(): void {
-    $(() => {
-      $('[data-toggle="tooltip"]').tooltip();
-    });
+    this.tooltip.abrirTooltip();
     setTimeout(() => {
-      $(() => {
-        $('[data-toggle="tooltip"]').tooltip({
-            trigger: 'hover'
-          });
-      });
+      this.tooltip.abrirTooltipHoover();
     }, 150);
 
     this.tecnologiaSobreMi.getTecnologia()
@@ -43,13 +39,6 @@ export class AjustesComponent implements OnInit {
     .subscribe( async (res: any) => {
       this.sobreMiBackend = await res.sobreMi[0];
     });
-    window.scrollTo(0, 0);
-  }
-
-  ocultarTooltip(){
-    $(() => {
-      $('[data-toggle="tooltip"]').tooltip('hide');
-      });
   }
 
   editarImgYo(img: Foto){
@@ -60,25 +49,25 @@ export class AjustesComponent implements OnInit {
       $('#imagen').modal();
       this.imagenesYoService.imagenNombre = '4a.jpg';
       this.imagenesYoService.imagenPath = this.fotoSel.img;
-      this.ocultarTooltip();
+      this.tooltip.cerrarTooltip();
     }
     if (this.fotoSel.img === this.imagenesYoService.img2){
       $('#imagen').modal();
       this.imagenesYoService.imagenNombre = '5a.jpeg';
       this.imagenesYoService.imagenPath = this.fotoSel.img;
-      this.ocultarTooltip();
+      this.tooltip.cerrarTooltip();
     }
     if (this.fotoSel.img === this.imagenesYoService.img3){
       $('#imagen').modal();
       this.imagenesYoService.imagenNombre = '8a.jpeg';
       this.imagenesYoService.imagenPath = this.fotoSel.img;
-      this.ocultarTooltip();
+      this.tooltip.cerrarTooltip();
     }
     if (this.fotoSel.img === this.imagenesYoService.img4){
       $('#imagen').modal();
       this.imagenesYoService.imagenNombre = '9a.jpeg';
       this.imagenesYoService.imagenPath = this.fotoSel.img;
-      this.ocultarTooltip();
+      this.tooltip.cerrarTooltip();
     }
   }
 
@@ -88,7 +77,7 @@ export class AjustesComponent implements OnInit {
       this.tecnologiaSobreMi.mostrarTec = true;
       $('#tecnologia').modal();
     }, 100);
-    this.ocultarTooltip();
+    this.tooltip.cerrarTooltip();
   }
 
   actualizarSobreMi(){

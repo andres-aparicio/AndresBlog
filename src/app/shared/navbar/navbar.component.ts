@@ -30,6 +30,7 @@ export class NavbarComponent implements OnInit {
     this.login1 = false;
     this.input1 = false;
     $('.navbar-collapse').collapse('hide');
+    window.scrollTo(0, 0);
   }
 
   alerta() {
@@ -83,6 +84,7 @@ export class NavbarComponent implements OnInit {
       });
     }
   }
+  
   logOut() {
     this.usuarioservice.logOut();
     this.cerrarNavbar();

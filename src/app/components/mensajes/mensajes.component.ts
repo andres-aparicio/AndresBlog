@@ -37,7 +37,7 @@ export class MensajesComponent implements OnInit {
       }
     });
     this.mensajes.sumaMensajes();
-    window.scrollTo(0, 0);
+    
   }
 
   borrarMensaje(mensaje: string){

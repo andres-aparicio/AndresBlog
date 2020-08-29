@@ -1,4 +1,6 @@
 
+@import '~animate.css/animate.min.css';
+
 body {
   background-image: url('./assets/img/fondo2.jpg');
   margin-top: 100px;
@@ -28,7 +30,7 @@ color: #C13584 !important;
 .fa-twitter {
 color: #00acee;
 }
-.fa-camera, .fa-laptop-code, .fa-smile {
+.fa-camera, .fa-laptop-code, .fa-smile, .fa-plus-circle {
   color: black;
  }
 .fa-at,

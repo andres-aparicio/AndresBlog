@@ -3,6 +3,7 @@ import { Router } from '@angular/router';
 import { NoticiaService } from '../../services/noticia.service';
 import { ImagenesYoService } from '../../services/imagenes-yo.service';
 import { Noticia, RespuestaNoticia } from '../../interfaces/noticias';
+import { TooltipService } from '../../services/tooltip.service';
 
 declare let $: any;
 
@@ -20,16 +21,13 @@ export class InicioComponent implements OnInit {
   constructor(
     private router: Router,
     public noticiaservice: NoticiaService,
-    public imagenesYo: ImagenesYoService) { }
+    public imagenesYo: ImagenesYoService,
+    public tooltip: TooltipService) { }
 
   ngOnInit(): void {
     window.scrollTo(0, 0);
     setTimeout(() => {
-      $(() => {
-      $('[data-toggle="tooltip"]').tooltip({
-        trigger: 'hover'
-      });
-      });
+      this.tooltip.abrirTooltipHoover();
     }, 150);
 
     this.noticiaservice.noticiaCompleta = false;
@@ -55,9 +53,7 @@ export class InicioComponent implements OnInit {
   }
 
   mostrarNoticia(noticia: Noticia) {
-    $(() => {
-      $('[data-toggle="tooltip"]').tooltip('hide');
-    });
+    this.tooltip.cerrarTooltip();
     this.noticiaservice.noticiaCompleta = true;
     this.noticiaservice.noticiaSel = noticia;
     setTimeout(() => {
