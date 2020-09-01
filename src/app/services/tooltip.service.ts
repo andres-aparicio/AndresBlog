@@ -7,6 +7,10 @@ declare let $: any;
 })
 export class TooltipService {
 
+  settings = true;
+  settings2 = true;
+  settings3 = true;
+
   constructor() { }
 
   abrirTooltip(){

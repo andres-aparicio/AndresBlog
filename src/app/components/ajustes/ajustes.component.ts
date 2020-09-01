@@ -82,11 +82,16 @@ export class AjustesComponent implements OnInit {
 
   actualizarSobreMi(){
     this.tecnologiaSobreMi.mostrarSobreMi = true;
+    this.tooltip.settings = false;
+    this.tooltip.settings3 = false;
   }
 
   actualizarSobreMiFull(f: NgForm){
     this.tecnologiaSobreMi.actualizarSobreMi(this.sobreMiBackend, this.sobreMiBackend._id);
     this.cerrarSobreMi();
+    this.tooltip.settings3 = true;
+    this.tooltip.settings = true;
+    window.scrollTo(0, 0);
     const Toast = Swal.mixin({
       toast: true,
       position: 'center',
@@ -101,5 +106,8 @@ export class AjustesComponent implements OnInit {
 
   cerrarSobreMi(){
     this.tecnologiaSobreMi.mostrarSobreMi = false;
+    this.tooltip.settings3 = true;
+    this.tooltip.settings = true;
+    window.scrollTo(0, 0);
   }
 }
