@@ -20,9 +20,9 @@ export class NoticiasComponent implements OnInit {
   ngOnInit(): void {
     window.scrollTo(0, 0);
     this.noticiaservice.noticiaCompleta = false;
-    this.noticiaservice.pagina = 1;
+   
     //Obtener noticias
-    this.noticiaservice.getUltimasNoticias()
+    this.noticiaservice.getUltimasNoticias2()
       .subscribe((res: RespuestaNoticia) => {
         this.noticias.push(...res.noticias);
       });
@@ -30,7 +30,6 @@ export class NoticiasComponent implements OnInit {
 
   mostrarNoticia(noticia: any){
     this.noticiaservice.noticiaSel = noticia;
-    console.log(this.noticiaservice.noticiaSel);
     this.router.navigateByUrl('/noticiaCompleta');
     this.noticiaservice.noticiaCompleta = true;
   }

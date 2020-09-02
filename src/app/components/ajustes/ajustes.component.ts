@@ -43,7 +43,7 @@ export class AjustesComponent implements OnInit {
 
   editarImgYo(img: Foto){
     this.fotoSel = img;
-    console.log(this.fotoSel.img);
+    
 
     if (this.fotoSel.img === this.imagenesYoService.img1){
       $('#imagen').modal();

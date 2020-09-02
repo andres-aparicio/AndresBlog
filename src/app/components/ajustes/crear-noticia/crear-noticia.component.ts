@@ -65,7 +65,6 @@ export class CrearNoticiaComponent implements OnInit {
     const reader = new FileReader();
     reader.onload = () => this.imagenSel1 = reader.result;
     reader.readAsDataURL(archivo);
-    console.log(this.imagenNoticiaSubir.name);
   }
 
   seleccionImgYo(archivo: File) {
@@ -86,7 +85,7 @@ export class CrearNoticiaComponent implements OnInit {
     return this.http
       .post(`${URL}/noticias/upload1`, formData, { headers })
       .subscribe((res: any) => {
-        console.log(res);
+        
       });
   }
 
@@ -100,7 +99,7 @@ export class CrearNoticiaComponent implements OnInit {
     return this.http
       .post(`${URL}/noticias/upload2`, formData, { headers })
       .subscribe(res => {
-        console.log(res);
+       
       });
   }
 
@@ -123,8 +122,6 @@ export class CrearNoticiaComponent implements OnInit {
     this.subirImagenNoticia();
     this.subirImagenYo();
     this.salirNoticia();
-
-    console.log(f.value);
     this.noticiasService.crearNoticia(
       this.noticia.titulo,
       this.noticia.subtitulo,

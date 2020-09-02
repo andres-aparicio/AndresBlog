@@ -22,6 +22,10 @@ export class NoticiaService {
     return this.http.get<RespuestaNoticia>(`${URL}/noticias?pagina=1`);
   }
 
+  getUltimasNoticias2() {
+    return this.http.get<RespuestaNoticia>(`${URL}/noticias?pagina=${this.pagina}`);
+  }
+
   getNoticiasPaginadasMas() {
     this.pagina++;
     return this.http.get<RespuestaNoticia>(`${URL}/noticias?pagina=${this.pagina}`);

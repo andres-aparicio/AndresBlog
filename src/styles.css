@@ -1,4 +1,5 @@
 
+
 @import '~animate.css/animate.min.css';
 
 body {
@@ -13,26 +14,27 @@ html {
 }
 
 .fa-whatsapp {
-color: #25D366;
+ color: #25D366;
 }
 .fa-facebook {
-color: #3b5998;
+ color: #3b5998;
 }
 .fa-envelope {
-color: orangered !important;
+ color: orangered !important;
 }
 .fa-linkedin-in {
-color: #0e76a8;
+ color: #0e76a8;
 }
 .fa-instagram {
-color: #C13584 !important;
+ color: #C13584 !important;
 }
 .fa-twitter {
-color: #00acee;
+ color: #00acee;
 }
 .fa-camera, .fa-laptop-code, .fa-smile, .fa-plus-circle {
-  color: black;
- }
+ color: black;
+}
+
 .fa-at,
 .fa-comment {
   color: rgba(255, 255, 0, 0.7) !important;
@@ -48,6 +50,7 @@ color: #00acee;
 
 .btn-outline-warning:hover {
   background-color: rgb(221, 221, 0) !important;
+  color: black !important;
 }
 
 .active {
@@ -184,7 +187,7 @@ color: #00acee;
 
 .colorNegro16 {
   /* En producción dejadlo transparente */
-  color: yellow;
+  color: rgba(255, 255, 0, 0);
 }
 
 .backInput17 {
@@ -204,7 +207,7 @@ color: #00acee;
 
 .backSobreMi19 {
   background-image: url('./assets/img/fondo2.jpg');
-  border: 4px solid rgba(255, 255, 0, 0.3);
+  border: 4px solid rgba(255, 255, 0, 0.212);
   border-radius: 2px;
   padding: 15px;
 }
@@ -274,7 +277,11 @@ color: #00acee;
 }
 
 .backImgNoti30 {
-  border: 1px solid rgba(255, 255, 0, 0.3);
+  border: 1px solid rgba(255, 255, 0, 0.212);
+}
+
+.backImgNoti30:hover {
+  border: 3px solid rgba(255, 255, 0, 0);
 }
 
 .colorNoti31 {
@@ -284,7 +291,7 @@ color: #00acee;
 
 .backNoti32 {
   background-image: url('./assets/img/fondo2.jpg');
-  border: 4px solid rgba(255, 255, 0, 0.3);
+  border: 4px solid rgba(255, 255, 0, 0.212);
   border-radius: 2px;
   padding: 15px;
 }
@@ -366,7 +373,7 @@ color: #00acee;
 
 .backMensajes44 {
   background-image: url('./assets/img/fondo2.jpg');
-  border: 4px solid rgba(255, 255, 0, 0.3);
+  border: 4px solid rgba(255, 255, 0, 0.212);
   border-radius: 2px;
   padding: 15px;
 }
@@ -385,7 +392,7 @@ color: #00acee;
 
 .backInputTec47 {
   background-image: url('./assets/img/navfoo.jpg');
-  border: 1px solid rgba(255, 255, 0, 0.3);
+  border: 1px solid rgba(255, 255, 0, 0.212);
   color: rgb(248, 248, 120) !important;
   text-align: center;
 }
@@ -393,4 +400,9 @@ color: #00acee;
 .container48 {
   margin-left: 25% !important;
   margin-right: 25% !important;
+}
+
+.backCookies49 {
+  background-image: url('./assets/img/navfoo.jpg');
+  border: 5px solid rgba(255, 255, 0, 0.212);
 }

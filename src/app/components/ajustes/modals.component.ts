@@ -31,7 +31,6 @@ export class ModalsComponent implements OnInit {
     const reader = new FileReader();
     reader.onload = () => this.imagenesYoService.imagenSel = reader.result;
     reader.readAsDataURL(archivo);
-    console.log(archivo.name);
   }
 
   cambiarMostrar(){
@@ -50,7 +49,7 @@ export class ModalsComponent implements OnInit {
       formdata.append('img', this.imagenesYoService.imagenSubir, this.imagenesYoService.imagenSubir.name);
       return this.http.post(`${URL}/uploadYo/update`, formdata, {headers})
       .subscribe(res => {
-        console.log(res);
+        
         setTimeout(() => {
           $('#imagen').modal('hide');
         }, 100);

@@ -15,7 +15,7 @@ export class NavbarComponent implements OnInit {
   ojo = true;
   login1: boolean;
   input1: boolean;
-  clave = '5f3f4d920a600705782b98ee'; //Quitar en produccion
+  clave = ''; //Quitar en produccion
 
   constructor(public modalservice: ModalService,
     public mensajes: MensajesService,

@@ -19,8 +19,8 @@ export class ModalsComponent implements OnInit {
   };
 
   usuarioLogin={
-    nombre: 'andres-apa',
-    password: '123'
+    nombre: '',
+    password: ''
   };
 
 
@@ -48,7 +48,6 @@ export class ModalsComponent implements OnInit {
   contactoFede(f: NgForm){
     if(f.invalid){
       $('#contacto').modal('hide');
-      console.log(f.value);
       this.limpiarmensaje();
       const Toast = Swal.mixin({
         toast: true,
@@ -64,7 +63,6 @@ export class ModalsComponent implements OnInit {
     }else{
       $('#contacto').modal('hide');
       this.mensajes.crearMensaje(this.mensaje.email, this.mensaje.mensaje);
-      console.log(f.value);
       this.limpiarmensaje();
       const Toast = Swal.mixin({
         toast: true,

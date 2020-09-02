@@ -24,18 +24,15 @@
                     <li class="nav-item mr-1 ml-1" routerLinkActive="active">
                         <a (click)="cerrarNavbar()" class="nav-link colorName3" [routerLink]="['/noticia']">Noticias</a>
                     </li>
-                    <!-- <li class="nav-item mr-1 ml-1" routerLinkActive="active">
-                        <a (click)="cerrarNavbar()" class="nav-link colorName3" [routerLink]="['/noticiaCompleta']">Noticia Completa</a>
-                    </li> -->
-                    <!-- *ngIf="usuarioservice.autentificado" -->
-                    <li  class="nav-item mr-1 ml-1" routerLinkActive="active">
+                    
+                    <li *ngIf="usuarioservice.autentificado" class="nav-item mr-1 ml-1" routerLinkActive="active">
                         <a (click)="cerrarNavbar()" class="nav-link colorName3" [routerLink]="['/mensajes']">Mensajes
-                            <span class="ml-2">{{mensajes.suma}}</span>
+                            <span class="ml-2">({{mensajes.suma}})</span>
                         </a>
                     </li>
-                    <li class="nav-item mr-1 ml-1" routerLinkActive="active">
+                    <li *ngIf="usuarioservice.autentificado" class="nav-item mr-1 ml-1" routerLinkActive="active">
                         <a (click)="cerrarNavbar()" class="nav-link colorName3" [routerLink]="['/ajustes']">Ajustes
-                            <i class="fas fa-user-cog"></i>
+                            <i class="fas fa-user-cog ml-2"></i>
                         </a>
                     </li>
                 </ul>
@@ -47,7 +44,7 @@
                         class="form-control backInput15" aria-describedby="inputGroup-sizzing-sm">
                     </div>
                     <i (click)="logOut()" *ngIf="modalservice.online" class="fas fa-sign-out-alt mr-4 fa-lg colorName3 cursor7"></i>
-                    <i *ngIf="modalservice.online" class="fas fa-wifi fa-lg colorName3"></i>
+                    <i *ngIf="modalservice.online" class="fas fa-wifi fa-lg colorName3 animate__animated animate__pulse animate__infinite"></i>
                 </div>
                 <div class="row">
                     <div class="col text-center">
