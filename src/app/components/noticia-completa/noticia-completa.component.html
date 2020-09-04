@@ -1,16 +1,16 @@
 <div class="container">
     <h3 class="colorName3 text-uppercase font-weight-bold text-center">
-      <span class="badge badge-warning">{{noticiaservice.noticiaSel.titulo}}</span>
+      <span class="badge badge-warning animate__animated animate__fadeInUp">{{noticiaservice.noticiaSel.titulo}}</span>
     </h3>
     <div class="container mt-3">
       <div class="container backPaginaNoticias34">
         <div class="card backNoticiaCompleta41 text-center">
   
-          <h5 class="card-title backNoticiaCompleta42">{{noticiaservice.noticiaSel.subtitulo}}</h5>
+          <h5 class="card-title backNoticiaCompleta42 animate__animated animate__fadeInUp">{{noticiaservice.noticiaSel.subtitulo}}</h5>
   
           <img [src]="noticiaservice.noticiaSel.img | imagenNoticia" class="card-img img-fluid">
   
-          <div class="card-body text-justify">
+          <div class="card-body text-justify animate__animated animate__fadeInLeft">
   
             <p class="card-text colorNoti31 tab27">
               {{noticiaservice.noticiaSel.texto1}}
@@ -31,14 +31,14 @@
               <i (click)="back()" class="fas fa-arrow-alt-circle-left fa-2x cursor7"></i>
             </div>
           </div>
-          <div class="container text-center backPaginaNoticiaCompleta43">
+          <div class="container text-center backPaginaNoticiaCompleta43 ">
             <p class="card-text"><span class="backPlus37">
                 <img [src]="noticiaservice.noticiaSel.imgYo | imagenYo" class="tamanoYo29 backImgNoti30 rounded-circle mr-2">
               </span>
-              <span class="mr-2">
+              <span class="mr-2 animate__animated animate__fadeInUp">
                 <u>{{noticiaservice.noticiaSel.autor}}</u>
               </span>
-              <span>
+              <span class="animate__animated animate__fadeInUp">
                 <small class="colorTexto40">{{noticiaservice.noticiaSel.created | date: 'fullDate'}} </small>
               </span>
             </p>

@@ -1,11 +1,11 @@
 <div class="container">
-    <h3 class="text-uppercase font-weight-bold mt-5 text-center mb-3">
-      <span class="badge badge-warning">Settings</span>
+    <h3 class="text-uppercase font-weight-bold mt-5 text-center mb-3 ">
+      <span class="badge badge-warning animate__animated animate__fadeInUp">Settings</span>
     </h3>
   <div *ngIf="tooltip.settings">
     <!-- Actualizar Imagenes Yo -->
       <div class="container text-left">
-        <div class="container mb-3">
+        <div class="container mb-3 animate__animated animate__fadeInUp">
           <h4>
             <span class="badge badge-warning">
               <i class="fas fa-camera">&nbsp;
@@ -14,7 +14,7 @@
             </span>
           </h4>
         </div>
-        <div class="container backPaginaNoticias34 text-center">
+        <div class="container backPaginaNoticias34 text-center animate__animated animate__fadeInUp">
           <div class="colorImgYoAjustes46">
             <div class="row text-center">
               <div class="col">
@@ -27,17 +27,17 @@
         </div>
       </div>
       <!-- Actializar tecnologías -->
-    <div class="container text-left mt-5">
-      <div class="container mb-3">
+    <div class="container text-left mt-5 ">
+      <div class="container mb-3 animate__animated animate__fadeInUp">
         <h4>
-          <span class="badge badge-warning">
+          <span class="badge badge-warning ">
             <i class="fas fa-laptop-code">&nbsp;
               ACTUALIZAR TECNOLOGÍAS
             </i>
           </span>
         </h4>
       </div>
-      <div class="container backPaginaNoticias34 text-center">
+      <div class="container backPaginaNoticias34 text-center animate__animated animate__fadeInUp">
         <div class="colorImgYoAjustes46">
           <div class="row">
             <div *ngFor="let tec of tecnologiasDestacadas" class="col text-center" data-trigger="hover"
@@ -52,8 +52,8 @@
     </div>
   </div>
   <!-- Actializar sobreMí -->
-  <div *ngIf="tooltip.settings2" class="container text-left mt-5">
-    <div class="container mb-3">
+  <div *ngIf="tooltip.settings2" class="container text-left mt-5 animate__animated animate__fadeInUp">
+    <div class="container mb-3 animate__animated animate__fadeInUp">
       <h4>
         <span class="badge badge-warning">
           <i class="fas fa-smile">&nbsp;
@@ -65,14 +65,14 @@
     <div class="container backPaginaNoticias34 text-center">
       <div class="colorImgYoAjustes46">
 
-        <div class="container48">
+        <div class="container48 animate__animated animate__fadeInUp">
           <button *ngIf="!tecnologiaSobreMi.mostrarSobreMi" (click)="actualizarSobreMi()" type="button"
             class="btn btn-warning btn-block font-weight-bold rounded-0 py-2">
             EDITAR SOBREMÍ
           </button>
         </div>
 
-        <div *ngIf="tecnologiaSobreMi.mostrarSobreMi" class="container mt-2 mb-4">
+        <div *ngIf="tecnologiaSobreMi.mostrarSobreMi" class="container mt-2 mb-4 animate__animated animate__fadeInUp">
           <form (ngSubmit)="actualizarSobreMiFull(f)" #f="ngForm">
             <div class="form-group text-center mt-4">
               <div class="form-group text-center">

@@ -1,2 +1,4 @@
 Clave Login Admin:
-5f3f4d920a600705782b98ee
+5f50407e90a64d41e4a0618c
+Usuario: andres-apa
+Contraseña: 123 

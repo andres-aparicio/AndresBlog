@@ -1,5 +1,5 @@
 <!-- Modal Alerta -->
-<div class="modal fade mt-5 py-5" id="alerta" data-backdrop="static" tabindex="-1" role="dialog"
+<div class="modal fade mt-5 py-5 " id="alerta" data-backdrop="static" tabindex="-1" role="dialog"
   aria-labelledby="staticBackdropLabel" aria-hidden="true">
   <div class="modal-dialog" role="document">
     <div class="modal-content colorModal11">
@@ -36,8 +36,8 @@
   <div class="modal-dialog" role="document">
     <div class="modal-content colorModal11">
       <div class="container backModal12">
-        <div class="container text-center mt-3">
-          <h3 class="fedeSub colorName3"><i class="fas fa-comments">&nbsp;Contacto</i>
+        <div class="container text-center mt-3 ">
+          <h3 class="fedeSub colorName3 animate__animated animate__fadeInUp"><i class="fas fa-comments">&nbsp;Contacto</i>
             <button (click)="limpiarmensaje()" type="button" class="close text-right colorName3" data-dismiss="modal" aria-label="Close">
               <span aria-hidden="true">&times;</span>
             </button>
@@ -45,7 +45,7 @@
         </div>
         <div class="modal-body">
           <form (ngSubmit)="contactoFede(f)" #f="ngForm">
-            <div class="form-group">
+            <div class="form-group animate__animated animate__fadeInLeft">
               <div class="input-group mb-2">
                 <div class="input-group-prepend">
                   <div class="input-group-text backContacto13"><i class="fas fa-at"></i></div>
@@ -54,7 +54,7 @@
                    autocomplete="off" id="focusInput" placeholder="Email..." required>
               </div>
             </div>
-            <div class="form-group">
+            <div class="form-group animate__animated animate__fadeInLeft">
               <div class="input-group mb-2">
                 <div class="input-group-prepend">
                   <div class="input-group-text backContacto13"><i class="fas fa-comment"></i></div>
@@ -63,7 +63,7 @@
                   placeholder="Mensaje..." required></textarea>
               </div>
             </div>
-            <div class="text-center">
+            <div class="text-center animate__animated animate__fadeInUp">
               <input type="submit" value="ENVIAR" class="btn btn-warning btn-block rounded-0 py-2">
             </div>
           </form>
